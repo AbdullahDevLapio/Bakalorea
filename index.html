@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تجهيز بوكس البكالوريا - النظام الجديد</title>
+    
+    <!-- خط كوفي العربي -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- مكتبة Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Cairo', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0f172a', // كحلي غامق فاخر
+                        secondary: '#3b82f6', // أزرق ساطع
+                        accent: '#f59e0b', // ذهبي/برتقالي للتميز
+                        surface: '#ffffff',
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
+                        'glow': '0 0 20px rgba(59, 130, 246, 0.5)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* تأثيرات الإخفاء والظهور */
+        .fade-in { animation: fadeIn 0.6s ease-out forwards; opacity: 0; transform: translateY(20px); }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* تنسيق اختيار البطاقات */
+        .radio-card-input:checked + .radio-card-label {
+            border-color: #3b82f6;
+            background-color: #eff6ff;
+            box-shadow: 0 4px 15px -3px rgba(59, 130, 246, 0.15);
+            transform: translateY(-2px);
+        }
+        .radio-card-input:checked + .radio-card-label .check-circle {
+            background-color: #3b82f6;
+            border-color: #3b82f6;
+        }
+        .radio-card-input:checked + .radio-card-label .check-circle svg {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        /* تأثيرات ناعمة */
+        .smooth-transition { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        
+        /* خلفية الصفحة */
+        body {
+            background-image: radial-gradient(circle at top right, #f8fafc, #e2e8f0);
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen pb-12">
+
+    <!-- الترويسة العلوية -->
+    <header class="bg-gradient-to-br from-primary via-[#1e293b] to-primary text-white pt-16 pb-20 px-4 relative overflow-hidden rounded-b-[2.5rem] shadow-xl">
+        <!-- أشكال زخرفية في الخلفية -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-blue-500 opacity-10 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-accent opacity-10 blur-3xl"></div>
+        
+        <div class="max-w-3xl mx-auto relative z-10 text-center">
+            <div class="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-4xl mb-6 shadow-glow">
+                🎓
+            </div>
+            <h1 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight">تجهيز <span class="text-transparent bg-clip-text bg-gradient-to-l from-blue-400 to-accent">بوكس البكالوريا</span></h1>
+            <p class="text-lg md:text-xl text-slate-300 md:w-4/5 mx-auto leading-relaxed">
+                أهلاً بك يا بطل في نظام البكالوريا الجديد (تانية ثانوي)! خطوتك الأولى نحو حلمك تبدأ من هنا. اختر مسارك ودعنا نجهز أدواتك.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-4 -mt-10 relative z-20">
+        <form id="orderForm" class="space-y-6">
+            
+            <!-- 1. البيانات الأساسية -->
+            <section class="bg-surface rounded-3xl shadow-soft border border-slate-100 p-6 md:p-8 fade-in">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-blue-50 text-secondary flex items-center justify-center font-bold text-lg ml-3">1</div>
+                    <h2 class="text-2xl font-bold text-slate-800">بياناتك الأساسية</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2" for="studentName">الاسم ثنائي <span class="text-red-500">*</span></label>
+                        <input type="text" id="studentName" required class="w-full px-5 py-3.5 bg-slate-50 rounded-xl border border-slate-200 focus:bg-white focus:ring-2 focus:ring-secondary focus:border-secondary transition-all outline-none text-slate-700" placeholder="اكتب اسمك هنا">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2" for="studentPhone">رقم الهاتف (واتساب) <span class="text-red-500">*</span></label>
+                        <input type="tel" id="studentPhone" required class="w-full px-5 py-3.5 bg-slate-50 rounded-xl border border-slate-200 focus:bg-white focus:ring-2 focus:ring-secondary focus:border-secondary transition-all outline-none text-slate-700" placeholder="01xxxxxxxxx" dir="ltr" style="text-align: right;">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. المسار الدراسي -->
+            <section class="bg-surface rounded-3xl shadow-soft border border-slate-100 p-6 md:p-8 fade-in delay-100">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-blue-50 text-secondary flex items-center justify-center font-bold text-lg ml-3">2</div>
+                    <h2 class="text-2xl font-bold text-slate-800">المسار الدراسي (الصف الثاني) <span class="text-red-500 text-lg">*</span></h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- مسار الطب -->
+                    <label class="relative cursor-pointer group">
+                        <input type="radio" name="track" value="الطب وعلوم الحياة" class="peer sr-only radio-card-input" required>
+                        <div class="radio-card-label h-full p-5 rounded-2xl border-2 border-slate-100 bg-white smooth-transition">
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="font-bold text-slate-800 text-lg flex items-center gap-2">
+                                    <span class="text-2xl">🩺</span> الطب وعلوم الحياة
+                                </span>
+                                <div class="check-circle w-6 h-6 rounded-full border-2 border-slate-300 flex items-center justify-center smooth-transition">
+                                    <svg class="w-4 h-4 text-white opacity-0 transform scale-50 smooth-transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-500 pr-9">يؤهلك للكليات الطبية والصحية.</p>
+                        </div>
+                    </label>
+
+                    <!-- مسار الهندسة -->
+                    <label class="relative cursor-pointer group">
+                        <input type="radio" name="track" value="الهندسة وعلوم الحاسب" class="peer sr-only radio-card-input">
+                        <div class="radio-card-label h-full p-5 rounded-2xl border-2 border-slate-100 bg-white smooth-transition">
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="font-bold text-slate-800 text-lg flex items-center gap-2">
+                                    <span class="text-2xl">💻</span> الهندسة والحاسب
+                                </span>
+                                <div class="check-circle w-6 h-6 rounded-full border-2 border-slate-300 flex items-center justify-center smooth-transition">
+                                    <svg class="w-4 h-4 text-white opacity-0 transform scale-50 smooth-transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-500 pr-9">يؤهلك لكليات الهندسة والذكاء الاصطناعي.</p>
+                        </div>
+                    </label>
+
+                    <!-- مسار التجارة -->
+                    <label class="relative cursor-pointer group">
+                        <input type="radio" name="track" value="التجارة والأعمال" class="peer sr-only radio-card-input">
+                        <div class="radio-card-label h-full p-5 rounded-2xl border-2 border-slate-100 bg-white smooth-transition">
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="font-bold text-slate-800 text-lg flex items-center gap-2">
+                                    <span class="text-2xl">📊</span> إدارة الأعمال
+                                </span>
+                                <div class="check-circle w-6 h-6 rounded-full border-2 border-slate-300 flex items-center justify-center smooth-transition">
+                                    <svg class="w-4 h-4 text-white opacity-0 transform scale-50 smooth-transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-500 pr-9">يؤهلك لكليات التجارة والاقتصاد.</p>
+                        </div>
+                    </label>
+
+                    <!-- مسار الآداب -->
+                    <label class="relative cursor-pointer group">
+                        <input type="radio" name="track" value="الآداب والفنون" class="peer sr-only radio-card-input">
+                        <div class="radio-card-label h-full p-5 rounded-2xl border-2 border-slate-100 bg-white smooth-transition">
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="font-bold text-slate-800 text-lg flex items-center gap-2">
+                                    <span class="text-2xl">🎨</span> الآداب والفنون
+                                </span>
+                                <div class="check-circle w-6 h-6 rounded-full border-2 border-slate-300 flex items-center justify-center smooth-transition">
+                                    <svg class="w-4 h-4 text-white opacity-0 transform scale-50 smooth-transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-500 pr-9">يؤهلك لكليات الألسن والآداب والفنون.</p>
+                        </div>
+                    </label>
+                </div>
+            </section>
+
+            <!-- 3. المادة الرابعة (ديناميكية) -->
+            <section class="bg-surface rounded-3xl shadow-soft border border-slate-100 p-6 md:p-8 fade-in delay-200" id="subjectSection">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-blue-50 text-secondary flex items-center justify-center font-bold text-lg ml-3">3</div>
+                    <h2 class="text-2xl font-bold text-slate-800">المادة الرابعة (الاختيارية)</h2>
+                </div>
+                
+                <!-- رسالة تظهر قبل اختيار المسار -->
+                <div id="subjectPlaceholder" class="text-center py-8 px-4 bg-slate-50 rounded-2xl border border-dashed border-slate-300">
+                    <span class="text-4xl block mb-3 opacity-50">👆</span>
+                    <p class="text-slate-500 font-semibold text-lg">الرجاء اختيار "المسار الدراسي" أولاً لتحديد مادتك الرابعة.</p>
+                </div>
+
+                <!-- الحاوية التي ستظهر فيها المواد ديناميكياً -->
+                <div id="dynamicSubjectsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4 hidden opacity-0 transition-opacity duration-500">
+                    <!-- سيتم حقن الخيارات هنا بواسطة JavaScript -->
+                </div>
+            </section>
+
+            <!-- 4. نوع البوكس -->
+            <section class="bg-surface rounded-3xl shadow-soft border border-slate-100 p-6 md:p-8 fade-in delay-300">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-blue-50 text-secondary flex items-center justify-center font-bold text-lg ml-3">4</div>
+                    <h2 class="text-2xl font-bold text-slate-800">تجهيز البوكس الخاص بك</h2>
+                </div>
+                
+                <div class="space-y-4 mb-6">
+                    <!-- العرض الكامل -->
+                    <label class="relative cursor-pointer block group">
+                        <input type="radio" name="packageType" value="full" class="peer sr-only radio-card-input" required checked>
+                        <div class="radio-card-label p-6 rounded-2xl border-2 border-slate-100 bg-white smooth-transition">
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="font-bold text-slate-800 text-xl flex items-center gap-2">
+                                    ✨ العرض الكامل (البوكس المتكامل)
+                                </span>
+                                <div class="check-circle w-6 h-6 rounded-full border-2 border-slate-300 flex items-center justify-center smooth-transition">
+                                    <svg class="w-4 h-4 text-white opacity-0 transform scale-50 smooth-transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                </div>
+                            </div>
+                            <p class="text-slate-500 leading-relaxed font-medium">
+                                يشمل كل ما تحتاجه للتميز: كشاكيل للمواد الأساسية، نوت بوك أنيق للملاحظات، مخطط يومي (Planner)، ومجموعة أقلام متنوعة، بالإضافة لهدايا تحفيزية!
+                            </p>
+                        </div>
+                    </label>
+
+                    <!-- تجهيز خاص -->
+                    <label class="relative cursor-pointer block group">
+                        <input type="radio" name="packageType" value="custom" id="customPackageRadio" class="peer sr-only radio-card-input">
+                        <div class="radio-card-label p-6 rounded-2xl border-2 border-slate-100 bg-white smooth-transition">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-bold text-slate-800 text-xl flex items-center gap-2">
+                                    🛠️ تجهيز خاص (اختر بنفسك)
+                                </span>
+                                <div class="check-circle w-6 h-6 rounded-full border-2 border-slate-300 flex items-center justify-center smooth-transition">
+                                    <svg class="w-4 h-4 text-white opacity-0 transform scale-50 smooth-transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                </div>
+                            </div>
+                            <p class="text-slate-500 font-medium">حدد العناصر التي تنقصك فقط والكميات المطلوبة.</p>
+                        </div>
+                    </label>
+                </div>
+
+                <!-- العناصر المخصصة -->
+                <div id="customItemsSection" class="hidden opacity-0 transform -translate-y-4 transition-all duration-500 bg-slate-50 rounded-2xl p-5 border border-slate-200">
+                    <p class="text-md font-bold mb-4 text-slate-700">اختر محتويات البوكس:</p>
+                    <div class="space-y-3">
+                        
+                        <!-- عنصر 1 -->
+                        <div class="flex items-center justify-between p-3 bg-white rounded-xl shadow-sm border border-slate-100 hover:border-blue-200 smooth-transition">
+                            <label class="flex items-center flex-1 cursor-pointer">
+                                <input type="checkbox" name="customItems" value="كشاكيل سلك مقاس كبير" class="w-5 h-5 text-secondary rounded border-gray-300 focus:ring-secondary custom-checkbox">
+                                <span class="mr-3 font-semibold text-slate-700">كشاكيل سلك مقاس كبير</span>
+                            </label>
+                            <input type="number" min="1" placeholder="العدد" class="w-20 px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-center outline-none focus:border-secondary focus:bg-white opacity-50 item-qty smooth-transition font-bold" disabled>
+                        </div>
+                        
+                        <!-- عنصر 2 -->
+                        <div class="flex items-center justify-between p-3 bg-white rounded-xl shadow-sm border border-slate-100 hover:border-blue-200 smooth-transition">
+                            <label class="flex items-center flex-1 cursor-pointer">
+                                <input type="checkbox" name="customItems" value="مجموعة أقلام ملونة" class="w-5 h-5 text-secondary rounded border-gray-300 focus:ring-secondary custom-checkbox">
+                                <span class="mr-3 font-semibold text-slate-700">مجموعة أقلام ملونة وأقلام تحديد</span>
+                            </label>
+                            <input type="number" min="1" placeholder="العدد" class="w-20 px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-center outline-none focus:border-secondary focus:bg-white opacity-50 item-qty smooth-transition font-bold" disabled>
+                        </div>
+
+                        <!-- عنصر 3 -->
+                        <label class="flex items-center p-4 bg-white rounded-xl shadow-sm border border-slate-100 hover:border-blue-200 cursor-pointer smooth-transition">
+                            <input type="checkbox" name="customItems" value="نوت بوك أنيق" class="w-5 h-5 text-secondary rounded border-gray-300 focus:ring-secondary">
+                            <span class="mr-3 font-semibold text-slate-700">نوت بوك (Notebook) فاخر للملاحظات</span>
+                        </label>
+                        
+                        <!-- عنصر 4 -->
+                        <label class="flex items-center p-4 bg-white rounded-xl shadow-sm border border-slate-100 hover:border-blue-200 cursor-pointer smooth-transition">
+                            <input type="checkbox" name="customItems" value="مخطط يومي" class="w-5 h-5 text-secondary rounded border-gray-300 focus:ring-secondary">
+                            <span class="mr-3 font-semibold text-slate-700">مخطط يومي (Planner) لتنظيم وقت المذاكرة</span>
+                        </label>
+
+                        <!-- ملاحظات إضافية -->
+                        <div class="pt-2">
+                            <input type="text" id="customExtraNotes" class="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none font-medium text-slate-700" placeholder="هل تريد إضافة أدوات أخرى غير مدرجة؟ (اكتبها هنا)">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- زر الإرسال -->
+            <button type="submit" id="submitBtn" class="w-full bg-gradient-to-r from-primary to-blue-800 hover:from-blue-800 hover:to-primary text-white font-bold text-xl py-5 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex justify-center items-center gap-3 fade-in delay-300">
+                <span>تأكيد وتسجيل الطلب</span>
+                <svg id="loadingIcon" class="animate-spin h-6 w-6 text-white hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+            </button>
+        </form>
+    </main>
+
+    <!-- نافذة النجاح (Modal) -->
+    <div id="successModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full p-8 text-center transform scale-95 transition-all duration-300" id="modalContent">
+            <div class="w-24 h-24 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+            </div>
+            <h3 class="text-3xl font-extrabold text-slate-800 mb-3">تم بنجاح! 🎉</h3>
+            <p class="text-slate-600 mb-8 text-lg leading-relaxed">
+                شكراً لك يا <span id="modalName" class="font-bold text-primary"></span>. لقد تم استلام طلبك للبوكس الخاص بمسار <span id="modalTrack" class="font-bold text-secondary"></span>. نتمنى لك عاماً دراسياً مليئاً بالتفوق!
+            </p>
+            <button onclick="closeModal()" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold py-4 rounded-xl transition-colors text-lg">
+                حسناً، إغلاق
+            </button>
+        </div>
+    </div>
+
+    <!-- كود JavaScript -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // إعدادات فايربيز
+        const userProvidedConfig = {
+            apiKey: "AIzaSyAZo29qOy_hqCZuAzzq9Xq80PF2iBQMdc8",
+            authDomain: "mr-abas.firebaseapp.com",
+            projectId: "mr-abas",
+            storageBucket: "mr-abas.firebasestorage.app",
+            messagingSenderId: "402909262079",
+            appId: "1:402909262079:web:7ccec1f4e73972111a9cca",
+            measurementId: "G-XP6GY0TGSB"
+        };
+        
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : userProvidedConfig;
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        // --- منطق المادة الرابعة الديناميكية ---
+        const trackRadios = document.querySelectorAll('input[name="track"]');
+        const placeholder = document.getElementById('subjectPlaceholder');
+        const subjectsContainer = document.getElementById('dynamicSubjectsContainer');
+
+        // خريطة المسارات والمواد المرتبطة بها
+        const trackSubjects = {
+            'الطب وعلوم الحياة': [
+                { id: 'physics', name: 'فيزياء', icon: '🧲', desc: 'مادة أساسية لفهم قوانين الطبيعة.' },
+                { id: 'math', name: 'رياضيات', icon: '📐', desc: 'مادة تنمي مهارات التفكير المنطقي.' }
+            ],
+            'الهندسة وعلوم الحاسب': [
+                { id: 'chemistry', name: 'كيمياء', icon: '🧪', desc: 'أساسيات المادة والتفاعلات الكيميائية.' },
+                { id: 'programming', name: 'برمجة وذكاء اصطناعي', icon: '💻', desc: 'لغة المستقبل وأساس التكنولوجيا.' }
+            ],
+            'التجارة والأعمال': [
+                { id: 'business', name: 'إدارة أعمال', icon: '📈', desc: 'أسس القيادة وإدارة المؤسسات.' },
+                { id: 'accounting', name: 'محاسبة', icon: '📊', desc: 'لغة المال والأعمال والميزانيات.' }
+            ],
+            'الآداب والفنون': [
+                { id: 'psychology', name: 'علم نفس', icon: '🧠', desc: 'دراسة السلوك البشري والتفكير.' },
+                { id: 'secondLang', name: 'لغة أجنبية ثانية', icon: '🌍', desc: 'فرنسي / ألماني / إيطالي / إسباني.' }
+            ]
+        };
+
+        trackRadios.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                const selectedTrack = e.target.value;
+                const subjects = trackSubjects[selectedTrack];
+                
+                // إخفاء الـ Placeholder وإظهار الحاوية بحركة ناعمة
+                placeholder.classList.add('hidden');
+                subjectsContainer.classList.remove('hidden');
+                
+                // تأخير بسيط لبدء حركة الظهور (Fade in)
+                setTimeout(() => {
+                    subjectsContainer.classList.remove('opacity-0');
+                }, 50);
+
+                // بناء كروت المواد ديناميكياً
+                subjectsContainer.innerHTML = subjects.map(sub => `
+                    <label class="relative cursor-pointer group">
+                        <input type="radio" name="optionalSubject" value="${sub.name}" class="peer sr-only radio-card-input" required>
+                        <div class="radio-card-label h-full p-5 rounded-2xl border-2 border-slate-100 bg-white smooth-transition">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-bold text-slate-800 text-lg flex items-center gap-2">
+                                    <span class="text-2xl">${sub.icon}</span> ${sub.name}
+                                </span>
+                                <div class="check-circle w-6 h-6 rounded-full border-2 border-slate-300 flex items-center justify-center smooth-transition">
+                                    <svg class="w-4 h-4 text-white opacity-0 transform scale-50 smooth-transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-500 mt-1">${sub.desc}</p>
+                        </div>
+                    </label>
+                `).join('');
+            });
+        });
+
+        // --- منطق إظهار/إخفاء قسم "التجهيز الخاص" ---
+        const packageRadios = document.querySelectorAll('input[name="packageType"]');
+        const customSection = document.getElementById('customItemsSection');
+        
+        packageRadios.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                if (e.target.value === 'custom') {
+                    customSection.classList.remove('hidden');
+                    // تفعيل حركة الظهور
+                    setTimeout(() => {
+                        customSection.classList.remove('opacity-0', '-translate-y-4');
+                    }, 10);
+                } else {
+                    customSection.classList.add('opacity-0', '-translate-y-4');
+                    setTimeout(() => {
+                        customSection.classList.add('hidden');
+                    }, 500); // يتوافق مع مدة الـ transition
+                }
+            });
+        });
+
+        // --- تفعيل حقول الكمية للعناصر المخصصة ---
+        const customCheckboxes = document.querySelectorAll('.custom-checkbox');
+        customCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', (e) => {
+                const numberInput = e.target.closest('div').querySelector('.item-qty');
+                if (numberInput) {
+                    if (e.target.checked) {
+                        numberInput.disabled = false;
+                        numberInput.classList.remove('opacity-50');
+                        if (!numberInput.value) numberInput.value = 1;
+                        numberInput.focus();
+                    } else {
+                        numberInput.disabled = true;
+                        numberInput.classList.add('opacity-50');
+                        numberInput.value = '';
+                    }
+                }
+            });
+        });
+
+        // --- معالجة إرسال النموذج ---
+        const form = document.getElementById('orderForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const loadingIcon = document.getElementById('loadingIcon');
+        
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // التحقق من أن الطالب اختار مادة رابعة
+            const track = document.querySelector('input[name="track"]:checked')?.value;
+            const optionalSubject = document.querySelector('input[name="optionalSubject"]:checked')?.value;
+            
+            if (!optionalSubject) {
+                showError("الرجاء اختيار المادة الرابعة الإختيارية.");
+                return;
+            }
+
+            const name = document.getElementById('studentName').value.trim();
+            const phone = document.getElementById('studentPhone').value.trim();
+            const packageType = document.querySelector('input[name="packageType"]:checked')?.value;
+            
+            let customItemsDetails = [];
+            if (packageType === 'custom') {
+                const checkedItems = document.querySelectorAll('input[name="customItems"]:checked');
+                checkedItems.forEach(item => {
+                    // البحث عن حقل الكمية المرتبط بالتشيك بوكس إن وجد
+                    const container = item.closest('label').parentElement;
+                    const numberInput = container.querySelector('.item-qty');
+                    let quantity = numberInput ? `(العدد: ${numberInput.value})` : '';
+                    customItemsDetails.push(`${item.value} ${quantity}`.trim());
+                });
+                
+                const extraNotes = document.getElementById('customExtraNotes').value.trim();
+                if (extraNotes) customItemsDetails.push(`إضافات أخرى: ${extraNotes}`);
+            }
+
+            const orderData = {
+                studentName: name,
+                studentPhone: phone,
+                educationalTrack: track,
+                optionalSubject: optionalSubject,
+                packageType: packageType === 'full' ? 'العرض الكامل' : 'تجهيز خاص',
+                customItemsSelected: customItemsDetails,
+                createdAt: serverTimestamp()
+            };
+
+            submitBtn.disabled = true;
+            submitBtn.classList.add('opacity-90', 'cursor-not-allowed', 'scale-95');
+            loadingIcon.classList.remove('hidden');
+
+            try {
+                await signInAnonymously(auth);
+                const appId = typeof __app_id !== 'undefined' ? __app_id : 'mr-abas';
+                const collectionPath = typeof __app_id !== 'undefined' 
+                    ? `artifacts/${appId}/public/data/box_orders` 
+                    : `box_orders`;
+
+                await addDoc(collection(db, collectionPath), orderData);
+                
+                // إظهار نافذة النجاح
+                document.getElementById('modalName').textContent = name.split(' ')[0]; // الاسم الأول فقط لودية أكثر
+                document.getElementById('modalTrack').textContent = track;
+                
+                const modal = document.getElementById('successModal');
+                const modalContent = document.getElementById('modalContent');
+                
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    modal.classList.remove('opacity-0');
+                    modalContent.classList.remove('scale-95');
+                }, 10);
+                
+                // إعادة تعيين النموذج
+                form.reset();
+                subjectsContainer.innerHTML = '';
+                subjectsContainer.classList.add('opacity-0');
+                setTimeout(() => subjectsContainer.classList.add('hidden'), 500);
+                placeholder.classList.remove('hidden');
+                
+                customSection.classList.add('opacity-0', '-translate-y-4');
+                setTimeout(() => customSection.classList.add('hidden'), 500);
+                
+            } catch (error) {
+                console.error("Error saving order: ", error);
+                showError("حدث خطأ أثناء إرسال الطلب. يرجى التأكد من اتصالك بالإنترنت.");
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('opacity-90', 'cursor-not-allowed', 'scale-95');
+                loadingIcon.classList.add('hidden');
+            }
+        });
+
+        // --- دوال مساعدة للواجهة ---
+        window.closeModal = function() {
+            const modal = document.getElementById('successModal');
+            const modalContent = document.getElementById('modalContent');
+            
+            modal.classList.add('opacity-0');
+            modalContent.classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        window.showError = function(msg) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'fixed top-6 left-1/2 transform -translate-x-1/2 bg-red-600 text-white px-6 py-4 rounded-2xl shadow-2xl z-50 transition-all duration-500 font-bold flex items-center gap-3';
+            errorDiv.style.opacity = '0';
+            errorDiv.style.transform = 'translate(-50%, -20px)';
+            errorDiv.innerHTML = `
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                ${msg}
+            `;
+            
+            document.body.appendChild(errorDiv);
+            
+            // حركة الدخول
+            requestAnimationFrame(() => {
+                errorDiv.style.opacity = '1';
+                errorDiv.style.transform = 'translate(-50%, 0)';
+            });
+            
+            // حركة الخروج
+            setTimeout(() => {
+                errorDiv.style.opacity = '0';
+                errorDiv.style.transform = 'translate(-50%, -20px)';
+                setTimeout(() => errorDiv.remove(), 500);
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
