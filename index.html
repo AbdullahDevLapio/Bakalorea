@@ -1,576 +1,316 @@
 <!DOCTYPE html>
-<html dir="rtl" lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تجهيز بوكس البكالوريا - النظام الجديد</title>
-    
-    <!-- خط كوفي العربي -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- مكتبة Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Cairo', 'sans-serif'],
-                    },
-                    colors: {
-                        primary: '#0f172a', // كحلي غامق فاخر
-                        secondary: '#3b82f6', // أزرق ساطع
-                        accent: '#f59e0b', // ذهبي/برتقالي للتميز
-                        surface: '#ffffff',
-                    },
-                    boxShadow: {
-                        'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
-                        'glow': '0 0 20px rgba(59, 130, 246, 0.5)',
-                    }
-                }
-            }
-        }
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>تقييمات اللغة الإنجليزية – الترم الأول كامل (بالحل) | تحميل PDF</title>
+<meta name="description" content="حمّل تقييمات اللغة الإنجليزية للترم الأول كاملة بصيغة PDF، نسخة بدون حل ونسخة بالإجابات النموذجية، مجانًا وبرابط مباشر.">
+<meta name="theme-color" content="#1b2a5b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@600;700&family=Almarai:wght@400;700;800&display=swap" rel="stylesheet">
 
-    <style>
-        /* تأثيرات الإخفاء والظهور */
-        .fade-in { animation: fadeIn 0.6s ease-out forwards; opacity: 0; transform: translateY(20px); }
-        .delay-100 { animation-delay: 0.1s; }
-        .delay-200 { animation-delay: 0.2s; }
-        .delay-300 { animation-delay: 0.3s; }
-        
-        @keyframes fadeIn {
-            to { opacity: 1; transform: translateY(0); }
-        }
+<style>
+:root{
+  --ink:#1b2a5b;
+  --ink-soft:#4a5680;
+  --paper:#ffffff;
+  --grid:#e3eaf4;
+  --bg:#f1f5fb;
+  --red:#d6322e;
+  --mark:#ffe45c;
+  --line:#cfd9ea;
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Almarai","Tahoma",sans-serif;
+  color:var(--ink);
+  background-color:var(--bg);
+  background-image:
+    linear-gradient(var(--grid) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:28px 28px;
+  line-height:1.8;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1080px,92%);margin-inline:auto}
 
-        /* تنسيق اختيار البطاقات */
-        .radio-card-input:checked + .radio-card-label {
-            border-color: #3b82f6;
-            background-color: #eff6ff;
-            box-shadow: 0 4px 15px -3px rgba(59, 130, 246, 0.15);
-            transform: translateY(-2px);
-        }
-        .radio-card-input:checked + .radio-card-label .check-circle {
-            background-color: #3b82f6;
-            border-color: #3b82f6;
-        }
-        .radio-card-input:checked + .radio-card-label .check-circle svg {
-            opacity: 1;
-            transform: scale(1);
-        }
-        
-        /* تأثيرات ناعمة */
-        .smooth-transition { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        
-        /* خلفية الصفحة */
-        body {
-            background-image: radial-gradient(circle at top right, #f8fafc, #e2e8f0);
-        }
-    </style>
+/* header */
+.top{background:var(--ink);color:#fff}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:12px}
+.brand{font-family:"Reem Kufi",sans-serif;font-size:1.3rem;font-weight:700;letter-spacing:.2px}
+.brand span{background:var(--mark);color:var(--ink);padding:0 8px;border-radius:6px;margin-inline-start:6px}
+.top nav a{color:#dbe3f7;text-decoration:none;font-size:.95rem;margin-inline-start:18px}
+.top nav a:hover{color:#fff}
+
+/* hero */
+.hero{padding:56px 0 40px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero h1{
+  font-family:"Reem Kufi",sans-serif;
+  font-size:clamp(2rem,5vw,3.4rem);
+  line-height:1.35;
+  font-weight:700;
+}
+.hero h1 .hl{
+  background:linear-gradient(transparent 58%,var(--mark) 58%);
+  padding:0 4px;
+}
+.hero p.lead{margin-top:16px;font-size:1.1rem;color:var(--ink-soft);max-width:34em}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  font:inherit;font-weight:800;font-size:1rem;
+  padding:14px 22px;border-radius:12px;text-decoration:none;cursor:pointer;
+  border:2px solid var(--ink);transition:transform .15s,box-shadow .15s;
+}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--red);border-color:var(--red);color:#fff;box-shadow:0 4px 0 #9d2220}
+.btn-primary:hover{box-shadow:0 6px 0 #9d2220;transform:translateY(-2px)}
+.btn-ghost{background:#fff;color:var(--ink);box-shadow:0 4px 0 var(--ink)}
+.btn-ghost:hover{box-shadow:0 6px 0 var(--ink);transform:translateY(-2px)}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* exam paper */
+.sheet{
+  position:relative;background:var(--paper);border:2px solid var(--ink);border-radius:6px;
+  padding:26px 26px 30px;transform:rotate(-2deg);
+  box-shadow:8px 8px 0 var(--ink);direction:ltr;text-align:left;
+}
+.sheet h3{font-size:.95rem;font-weight:800;border-bottom:2px solid var(--ink);padding-bottom:8px;margin-bottom:14px;display:flex;justify-content:space-between}
+.sheet .q{font-size:.95rem;margin:10px 0;display:flex;gap:10px;align-items:center;font-family:Georgia,serif}
+.sheet .q i{font-style:normal;font-weight:700}
+.sheet .ans{border-bottom:2px dotted var(--ink-soft);min-width:90px;display:inline-block;text-align:center;color:var(--red);font-family:"Reem Kufi",cursive;font-size:1.15rem;line-height:1.2}
+.sheet .score{
+  position:absolute;top:-22px;right:-18px;width:86px;height:86px;border:4px solid var(--red);border-radius:50%;
+  display:grid;place-items:center;color:var(--red);font-family:"Reem Kufi",sans-serif;font-size:1.6rem;font-weight:700;
+  background:#fff;transform:rotate(12deg);
+}
+.sheet .tick{color:var(--red);font-weight:800;margin-inline-start:auto}
+
+/* downloads */
+section{padding:34px 0}
+h2.sec{font-family:"Reem Kufi",sans-serif;font-size:1.9rem;margin-bottom:6px}
+p.sub{color:var(--ink-soft);margin-bottom:24px}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.card{
+  background:#fff;border:2px solid var(--ink);border-radius:var(--radius);padding:26px;
+  display:flex;flex-direction:column;gap:12px;position:relative;
+}
+.card.solved{box-shadow:6px 6px 0 var(--red)}
+.card.plain{box-shadow:6px 6px 0 var(--ink)}
+.tag{
+  align-self:flex-start;font-weight:800;font-size:.85rem;padding:2px 12px;border-radius:99px;
+  border:2px solid currentColor;
+}
+.solved .tag{color:var(--red)}
+.plain .tag{color:var(--ink)}
+.card h3{font-family:"Reem Kufi",sans-serif;font-size:1.5rem;line-height:1.4}
+.card p{color:var(--ink-soft)}
+.card ul{list-style:none;display:grid;gap:4px;margin:4px 0 8px}
+.card li{padding-inline-start:26px;position:relative;font-size:.97rem}
+.card li::before{content:"✓";position:absolute;inset-inline-start:0;color:var(--red);font-weight:800}
+.card .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto}
+.card .btn{padding:12px 18px}
+
+/* ad slots */
+.ad{margin:10px auto;text-align:center}
+.ad small{display:block;font-size:.72rem;color:var(--ink-soft);margin-bottom:4px}
+.sponsor{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  background:#fff;border:2px dashed var(--line);border-radius:var(--radius);padding:14px 20px;text-decoration:none;
+}
+.sponsor b{font-size:.78rem;background:var(--mark);padding:1px 10px;border-radius:99px}
+.sponsor span{flex:1;min-width:200px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:s}
+.step{background:#fff;border:2px solid var(--line);border-radius:var(--radius);padding:20px 20px 20px 20px;position:relative}
+.step::before{
+  counter-increment:s;content:counter(s);
+  display:grid;place-items:center;width:34px;height:34px;border-radius:50%;
+  background:var(--ink);color:#fff;font-weight:800;margin-bottom:8px;
+}
+.step h4{font-size:1.05rem;margin-bottom:2px}
+.step p{color:var(--ink-soft);font-size:.95rem}
+
+/* faq */
+details{background:#fff;border:2px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px}
+details[open]{border-color:var(--ink)}
+summary{cursor:pointer;font-weight:800;list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.3rem;line-height:1}
+details[open] summary::after{content:"−"}
+details p{margin-top:8px;color:var(--ink-soft)}
+
+footer{background:var(--ink);color:#c9d3ee;margin-top:30px;padding:26px 0;text-align:center;font-size:.9rem}
+footer a{color:#fff}
+
+@media(max-width:820px){
+  .hero .wrap{grid-template-columns:1fr}
+  .sheet{max-width:380px;margin:20px auto 0}
+  .cards,.steps{grid-template-columns:1fr}
+  .top nav{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .btn{transition:none}
+}
+</style>
 </head>
-<body class="text-slate-800 antialiased min-h-screen pb-12">
 
-    <!-- الترويسة العلوية -->
-    <header class="bg-gradient-to-br from-primary via-[#1e293b] to-primary text-white pt-16 pb-20 px-4 relative overflow-hidden rounded-b-[2.5rem] shadow-xl">
-        <!-- أشكال زخرفية في الخلفية -->
-        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-blue-500 opacity-10 blur-3xl"></div>
-        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-accent opacity-10 blur-3xl"></div>
-        
-        <div class="max-w-3xl mx-auto relative z-10 text-center">
-            <div class="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-4xl mb-6 shadow-glow">
-                🎓
-            </div>
-            <h1 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight">تجهيز <span class="text-transparent bg-clip-text bg-gradient-to-l from-blue-400 to-accent">بوكس البكالوريا</span></h1>
-            <p class="text-lg md:text-xl text-slate-300 md:w-4/5 mx-auto leading-relaxed">
-                أهلاً بك يا بطل في نظام البكالوريا الجديد (تانية ثانوي)! خطوتك الأولى نحو حلمك تبدأ من هنا. اختر مسارك ودعنا نجهز أدواتك.
-            </p>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand">منصة التقييمات<span>English</span></div>
+    <nav>
+      <a href="#download">التحميل</a>
+      <a href="#how">طريقة التحميل</a>
+      <a href="#faq">أسئلة شائعة</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>تقييمات اللغة الإنجليزية<br>الترم الأول <span class="hl">كاملة بالحل</span></h1>
+        <p class="lead">حمّل ملف التقييمات كاملًا بصيغة PDF. حل الأسئلة بنفسك أولًا من النسخة الفاضية، وبعدها راجع إجاباتك من النسخة المحلولة.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#download">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>
+            حمّل الآن
+          </a>
+          <a class="btn btn-ghost" href="#how">إزاي أحمّل؟</a>
         </div>
-    </header>
+      </div>
 
-    <main class="max-w-3xl mx-auto px-4 -mt-10 relative z-20">
-        <form id="orderForm" class="space-y-6">
-            
-            <!-- 1. البيانات الأساسية -->
-            <section class="bg-surface rounded-3xl shadow-soft border border-slate-100 p-6 md:p-8 fade-in">
-                <div class="flex items-center mb-6">
-                    <div class="w-10 h-10 rounded-xl bg-blue-50 text-secondary flex items-center justify-center font-bold text-lg ml-3">1</div>
-                    <h2 class="text-2xl font-bold text-slate-800">بياناتك الأساسية</h2>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-2" for="studentName">الاسم ثنائي <span class="text-red-500">*</span></label>
-                        <input type="text" id="studentName" required class="w-full px-5 py-3.5 bg-slate-50 rounded-xl border border-slate-200 focus:bg-white focus:ring-2 focus:ring-secondary focus:border-secondary transition-all outline-none text-slate-700" placeholder="اكتب اسمك هنا">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-2" for="studentPhone">رقم الهاتف (واتساب) <span class="text-red-500">*</span></label>
-                        <input type="tel" id="studentPhone" required class="w-full px-5 py-3.5 bg-slate-50 rounded-xl border border-slate-200 focus:bg-white focus:ring-2 focus:ring-secondary focus:border-secondary transition-all outline-none text-slate-700" placeholder="01xxxxxxxxx" dir="ltr" style="text-align: right;">
-                    </div>
-                </div>
-            </section>
-
-            <!-- 2. المسار الدراسي -->
-            <section class="bg-surface rounded-3xl shadow-soft border border-slate-100 p-6 md:p-8 fade-in delay-100">
-                <div class="flex items-center mb-6">
-                    <div class="w-10 h-10 rounded-xl bg-blue-50 text-secondary flex items-center justify-center font-bold text-lg ml-3">2</div>
-                    <h2 class="text-2xl font-bold text-slate-800">المسار الدراسي (الصف الثاني) <span class="text-red-500 text-lg">*</span></h2>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <!-- مسار الطب -->
-                    <label class="relative cursor-pointer group">
-                        <input type="radio" name="track" value="الطب وعلوم الحياة" class="peer sr-only radio-card-input" required>
-                        <div class="radio-card-label h-full p-5 rounded-2xl border-2 border-slate-100 bg-white smooth-transition">
-                            <div class="flex justify-between items-start mb-2">
-                                <span class="font-bold text-slate-800 text-lg flex items-center gap-2">
-                                    <span class="text-2xl">🩺</span> الطب وعلوم الحياة
-                                </span>
-                                <div class="check-circle w-6 h-6 rounded-full border-2 border-slate-300 flex items-center justify-center smooth-transition">
-                                    <svg class="w-4 h-4 text-white opacity-0 transform scale-50 smooth-transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                                </div>
-                            </div>
-                            <p class="text-sm text-slate-500 pr-9">يؤهلك للكليات الطبية والصحية.</p>
-                        </div>
-                    </label>
-
-                    <!-- مسار الهندسة -->
-                    <label class="relative cursor-pointer group">
-                        <input type="radio" name="track" value="الهندسة وعلوم الحاسب" class="peer sr-only radio-card-input">
-                        <div class="radio-card-label h-full p-5 rounded-2xl border-2 border-slate-100 bg-white smooth-transition">
-                            <div class="flex justify-between items-start mb-2">
-                                <span class="font-bold text-slate-800 text-lg flex items-center gap-2">
-                                    <span class="text-2xl">💻</span> الهندسة والحاسب
-                                </span>
-                                <div class="check-circle w-6 h-6 rounded-full border-2 border-slate-300 flex items-center justify-center smooth-transition">
-                                    <svg class="w-4 h-4 text-white opacity-0 transform scale-50 smooth-transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                                </div>
-                            </div>
-                            <p class="text-sm text-slate-500 pr-9">يؤهلك لكليات الهندسة والذكاء الاصطناعي.</p>
-                        </div>
-                    </label>
-
-                    <!-- مسار التجارة -->
-                    <label class="relative cursor-pointer group">
-                        <input type="radio" name="track" value="التجارة والأعمال" class="peer sr-only radio-card-input">
-                        <div class="radio-card-label h-full p-5 rounded-2xl border-2 border-slate-100 bg-white smooth-transition">
-                            <div class="flex justify-between items-start mb-2">
-                                <span class="font-bold text-slate-800 text-lg flex items-center gap-2">
-                                    <span class="text-2xl">📊</span> إدارة الأعمال
-                                </span>
-                                <div class="check-circle w-6 h-6 rounded-full border-2 border-slate-300 flex items-center justify-center smooth-transition">
-                                    <svg class="w-4 h-4 text-white opacity-0 transform scale-50 smooth-transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                                </div>
-                            </div>
-                            <p class="text-sm text-slate-500 pr-9">يؤهلك لكليات التجارة والاقتصاد.</p>
-                        </div>
-                    </label>
-
-                    <!-- مسار الآداب -->
-                    <label class="relative cursor-pointer group">
-                        <input type="radio" name="track" value="الآداب والفنون" class="peer sr-only radio-card-input">
-                        <div class="radio-card-label h-full p-5 rounded-2xl border-2 border-slate-100 bg-white smooth-transition">
-                            <div class="flex justify-between items-start mb-2">
-                                <span class="font-bold text-slate-800 text-lg flex items-center gap-2">
-                                    <span class="text-2xl">🎨</span> الآداب والفنون
-                                </span>
-                                <div class="check-circle w-6 h-6 rounded-full border-2 border-slate-300 flex items-center justify-center smooth-transition">
-                                    <svg class="w-4 h-4 text-white opacity-0 transform scale-50 smooth-transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                                </div>
-                            </div>
-                            <p class="text-sm text-slate-500 pr-9">يؤهلك لكليات الألسن والآداب والفنون.</p>
-                        </div>
-                    </label>
-                </div>
-            </section>
-
-            <!-- 3. المادة الرابعة (ديناميكية) -->
-            <section class="bg-surface rounded-3xl shadow-soft border border-slate-100 p-6 md:p-8 fade-in delay-200" id="subjectSection">
-                <div class="flex items-center mb-6">
-                    <div class="w-10 h-10 rounded-xl bg-blue-50 text-secondary flex items-center justify-center font-bold text-lg ml-3">3</div>
-                    <h2 class="text-2xl font-bold text-slate-800">المادة الرابعة (الاختيارية)</h2>
-                </div>
-                
-                <!-- رسالة تظهر قبل اختيار المسار -->
-                <div id="subjectPlaceholder" class="text-center py-8 px-4 bg-slate-50 rounded-2xl border border-dashed border-slate-300">
-                    <span class="text-4xl block mb-3 opacity-50">👆</span>
-                    <p class="text-slate-500 font-semibold text-lg">الرجاء اختيار "المسار الدراسي" أولاً لتحديد مادتك الرابعة.</p>
-                </div>
-
-                <!-- الحاوية التي ستظهر فيها المواد ديناميكياً -->
-                <div id="dynamicSubjectsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4 hidden opacity-0 transition-opacity duration-500">
-                    <!-- سيتم حقن الخيارات هنا بواسطة JavaScript -->
-                </div>
-            </section>
-
-            <!-- 4. نوع البوكس -->
-            <section class="bg-surface rounded-3xl shadow-soft border border-slate-100 p-6 md:p-8 fade-in delay-300">
-                <div class="flex items-center mb-6">
-                    <div class="w-10 h-10 rounded-xl bg-blue-50 text-secondary flex items-center justify-center font-bold text-lg ml-3">4</div>
-                    <h2 class="text-2xl font-bold text-slate-800">تجهيز البوكس الخاص بك</h2>
-                </div>
-                
-                <div class="space-y-4 mb-6">
-                    <!-- العرض الكامل -->
-                    <label class="relative cursor-pointer block group">
-                        <input type="radio" name="packageType" value="full" class="peer sr-only radio-card-input" required checked>
-                        <div class="radio-card-label p-6 rounded-2xl border-2 border-slate-100 bg-white smooth-transition">
-                            <div class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-slate-800 text-xl flex items-center gap-2">
-                                    ✨ العرض الكامل (البوكس المتكامل)
-                                </span>
-                                <div class="check-circle w-6 h-6 rounded-full border-2 border-slate-300 flex items-center justify-center smooth-transition">
-                                    <svg class="w-4 h-4 text-white opacity-0 transform scale-50 smooth-transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                                </div>
-                            </div>
-                            <p class="text-slate-500 leading-relaxed font-medium">
-                                يشمل كل ما تحتاجه للتميز: كشاكيل للمواد الأساسية، نوت بوك أنيق للملاحظات، مخطط يومي (Planner)، ومجموعة أقلام متنوعة، بالإضافة لهدايا تحفيزية!
-                            </p>
-                        </div>
-                    </label>
-
-                    <!-- تجهيز خاص -->
-                    <label class="relative cursor-pointer block group">
-                        <input type="radio" name="packageType" value="custom" id="customPackageRadio" class="peer sr-only radio-card-input">
-                        <div class="radio-card-label p-6 rounded-2xl border-2 border-slate-100 bg-white smooth-transition">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="font-bold text-slate-800 text-xl flex items-center gap-2">
-                                    🛠️ تجهيز خاص (اختر بنفسك)
-                                </span>
-                                <div class="check-circle w-6 h-6 rounded-full border-2 border-slate-300 flex items-center justify-center smooth-transition">
-                                    <svg class="w-4 h-4 text-white opacity-0 transform scale-50 smooth-transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                                </div>
-                            </div>
-                            <p class="text-slate-500 font-medium">حدد العناصر التي تنقصك فقط والكميات المطلوبة.</p>
-                        </div>
-                    </label>
-                </div>
-
-                <!-- العناصر المخصصة -->
-                <div id="customItemsSection" class="hidden opacity-0 transform -translate-y-4 transition-all duration-500 bg-slate-50 rounded-2xl p-5 border border-slate-200">
-                    <p class="text-md font-bold mb-4 text-slate-700">اختر محتويات البوكس:</p>
-                    <div class="space-y-3">
-                        
-                        <!-- عنصر 1 -->
-                        <div class="flex items-center justify-between p-3 bg-white rounded-xl shadow-sm border border-slate-100 hover:border-blue-200 smooth-transition">
-                            <label class="flex items-center flex-1 cursor-pointer">
-                                <input type="checkbox" name="customItems" value="كشاكيل سلك مقاس كبير" class="w-5 h-5 text-secondary rounded border-gray-300 focus:ring-secondary custom-checkbox">
-                                <span class="mr-3 font-semibold text-slate-700">كشاكيل سلك مقاس كبير</span>
-                            </label>
-                            <input type="number" min="1" placeholder="العدد" class="w-20 px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-center outline-none focus:border-secondary focus:bg-white opacity-50 item-qty smooth-transition font-bold" disabled>
-                        </div>
-                        
-                        <!-- عنصر 2 -->
-                        <div class="flex items-center justify-between p-3 bg-white rounded-xl shadow-sm border border-slate-100 hover:border-blue-200 smooth-transition">
-                            <label class="flex items-center flex-1 cursor-pointer">
-                                <input type="checkbox" name="customItems" value="مجموعة أقلام ملونة" class="w-5 h-5 text-secondary rounded border-gray-300 focus:ring-secondary custom-checkbox">
-                                <span class="mr-3 font-semibold text-slate-700">مجموعة أقلام ملونة وأقلام تحديد</span>
-                            </label>
-                            <input type="number" min="1" placeholder="العدد" class="w-20 px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-center outline-none focus:border-secondary focus:bg-white opacity-50 item-qty smooth-transition font-bold" disabled>
-                        </div>
-
-                        <!-- عنصر 3 -->
-                        <label class="flex items-center p-4 bg-white rounded-xl shadow-sm border border-slate-100 hover:border-blue-200 cursor-pointer smooth-transition">
-                            <input type="checkbox" name="customItems" value="نوت بوك أنيق" class="w-5 h-5 text-secondary rounded border-gray-300 focus:ring-secondary">
-                            <span class="mr-3 font-semibold text-slate-700">نوت بوك (Notebook) فاخر للملاحظات</span>
-                        </label>
-                        
-                        <!-- عنصر 4 -->
-                        <label class="flex items-center p-4 bg-white rounded-xl shadow-sm border border-slate-100 hover:border-blue-200 cursor-pointer smooth-transition">
-                            <input type="checkbox" name="customItems" value="مخطط يومي" class="w-5 h-5 text-secondary rounded border-gray-300 focus:ring-secondary">
-                            <span class="mr-3 font-semibold text-slate-700">مخطط يومي (Planner) لتنظيم وقت المذاكرة</span>
-                        </label>
-
-                        <!-- ملاحظات إضافية -->
-                        <div class="pt-2">
-                            <input type="text" id="customExtraNotes" class="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none font-medium text-slate-700" placeholder="هل تريد إضافة أدوات أخرى غير مدرجة؟ (اكتبها هنا)">
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- زر الإرسال -->
-            <button type="submit" id="submitBtn" class="w-full bg-gradient-to-r from-primary to-blue-800 hover:from-blue-800 hover:to-primary text-white font-bold text-xl py-5 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex justify-center items-center gap-3 fade-in delay-300">
-                <span>تأكيد وتسجيل الطلب</span>
-                <svg id="loadingIcon" class="animate-spin h-6 w-6 text-white hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                </svg>
-            </button>
-        </form>
-    </main>
-
-    <!-- نافذة النجاح (Modal) -->
-    <div id="successModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
-        <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full p-8 text-center transform scale-95 transition-all duration-300" id="modalContent">
-            <div class="w-24 h-24 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-6">
-                <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                </div>
-            </div>
-            <h3 class="text-3xl font-extrabold text-slate-800 mb-3">تم بنجاح! 🎉</h3>
-            <p class="text-slate-600 mb-8 text-lg leading-relaxed">
-                شكراً لك يا <span id="modalName" class="font-bold text-primary"></span>. لقد تم استلام طلبك للبوكس الخاص بمسار <span id="modalTrack" class="font-bold text-secondary"></span>. نتمنى لك عاماً دراسياً مليئاً بالتفوق!
-            </p>
-            <button onclick="closeModal()" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold py-4 rounded-xl transition-colors text-lg">
-                حسناً، إغلاق
-            </button>
-        </div>
+      <div class="sheet" aria-hidden="true">
+        <div class="score">10/10</div>
+        <h3><span>English Assessment</span><span>Term 1</span></h3>
+        <div class="q"><i>1.</i> She <span class="ans">goes</span> to school every day. <span class="tick">✓</span></div>
+        <div class="q"><i>2.</i> They <span class="ans">are playing</span> now. <span class="tick">✓</span></div>
+        <div class="q"><i>3.</i> I have <span class="ans">already</span> finished. <span class="tick">✓</span></div>
+        <div class="q"><i>4.</i> He <span class="ans">was</span> reading a book. <span class="tick">✓</span></div>
+      </div>
     </div>
+  </div>
 
-    <!-- كود JavaScript -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+  <!-- AD: native banner -->
+  <div class="wrap ad">
+    <small>إعلان</small>
+    <script async="async" data-cfasync="false" src="https://pl31766235.profitableratecpmnetwork.com/9873f1b9cb1ab9859388d879c48f6e58/invoke.js"></script>
+    <div id="container-9873f1b9cb1ab9859388d879c48f6e58"></div>
+  </div>
 
-        // إعدادات فايربيز
-        const userProvidedConfig = {
-            apiKey: "AIzaSyAZo29qOy_hqCZuAzzq9Xq80PF2iBQMdc8",
-            authDomain: "mr-abas.firebaseapp.com",
-            projectId: "mr-abas",
-            storageBucket: "mr-abas.firebasestorage.app",
-            messagingSenderId: "402909262079",
-            appId: "1:402909262079:web:7ccec1f4e73972111a9cca",
-            measurementId: "G-XP6GY0TGSB"
-        };
-        
-        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : userProvidedConfig;
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        const db = getFirestore(app);
+  <!-- DOWNLOAD -->
+  <section id="download">
+    <div class="wrap">
+      <h2 class="sec">اختار النسخة اللي محتاجها</h2>
+      <p class="sub">الملفين على Google Drive. تقدر تعاينهم أولًا أو تحمّلهم مباشرة.</p>
 
-        // --- منطق المادة الرابعة الديناميكية ---
-        const trackRadios = document.querySelectorAll('input[name="track"]');
-        const placeholder = document.getElementById('subjectPlaceholder');
-        const subjectsContainer = document.getElementById('dynamicSubjectsContainer');
+      <div class="cards">
+        <article class="card plain">
+          <span class="tag">بدون حل</span>
+          <h3>التقييمات – نسخة فاضية</h3>
+          <p>ملف الأسئلة كامل للترم الأول، مناسب للحل والمراجعة بنفسك.</p>
+          <ul>
+            <li>اللغة الإنجليزية – الترم الأول</li>
+            <li>مناسب للطباعة</li>
+            <li>صيغة PDF</li>
+          </ul>
+          <div class="actions">
+            <a class="btn btn-ghost" target="_blank" rel="noopener"
+               href="https://drive.google.com/uc?export=download&id=1YgNLvheky3jf2DnXxXhzSv9Uo9YXT1ef">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>
+              تحميل
+            </a>
+            <a class="btn btn-ghost" target="_blank" rel="noopener"
+               href="https://drive.google.com/file/d/1YgNLvheky3jf2DnXxXhzSv9Uo9YXT1ef/view?usp=sharing">معاينة</a>
+          </div>
+        </article>
 
-        // خريطة المسارات والمواد المرتبطة بها
-        const trackSubjects = {
-            'الطب وعلوم الحياة': [
-                { id: 'physics', name: 'فيزياء', icon: '🧲', desc: 'مادة أساسية لفهم قوانين الطبيعة.' },
-                { id: 'math', name: 'رياضيات', icon: '📐', desc: 'مادة تنمي مهارات التفكير المنطقي.' }
-            ],
-            'الهندسة وعلوم الحاسب': [
-                { id: 'chemistry', name: 'كيمياء', icon: '🧪', desc: 'أساسيات المادة والتفاعلات الكيميائية.' },
-                { id: 'programming', name: 'برمجة وذكاء اصطناعي', icon: '💻', desc: 'لغة المستقبل وأساس التكنولوجيا.' }
-            ],
-            'التجارة والأعمال': [
-                { id: 'business', name: 'إدارة أعمال', icon: '📈', desc: 'أسس القيادة وإدارة المؤسسات.' },
-                { id: 'accounting', name: 'محاسبة', icon: '📊', desc: 'لغة المال والأعمال والميزانيات.' }
-            ],
-            'الآداب والفنون': [
-                { id: 'psychology', name: 'علم نفس', icon: '🧠', desc: 'دراسة السلوك البشري والتفكير.' },
-                { id: 'secondLang', name: 'لغة أجنبية ثانية', icon: '🌍', desc: 'فرنسي / ألماني / إيطالي / إسباني.' }
-            ]
-        };
+        <article class="card solved">
+          <span class="tag">بالحل</span>
+          <h3>التقييمات – نسخة محلولة</h3>
+          <p>نفس الملف كامل مع الإجابات النموذجية، عشان تصحّح وتتأكد من حلك.</p>
+          <ul>
+            <li>اللغة الإنجليزية – الترم الأول كامل</li>
+            <li>إجابات نموذجية لكل التقييمات</li>
+            <li>صيغة PDF</li>
+          </ul>
+          <div class="actions">
+            <a class="btn btn-primary" target="_blank" rel="noopener"
+               href="https://drive.google.com/uc?export=download&id=1EkZmDN9pBx3matjg3ll0W25FcwHEd5zD">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>
+              تحميل
+            </a>
+            <a class="btn btn-ghost" target="_blank" rel="noopener"
+               href="https://drive.google.com/file/d/1EkZmDN9pBx3matjg3ll0W25FcwHEd5zD/view?usp=sharing">معاينة</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-        trackRadios.forEach(radio => {
-            radio.addEventListener('change', (e) => {
-                const selectedTrack = e.target.value;
-                const subjects = trackSubjects[selectedTrack];
-                
-                // إخفاء الـ Placeholder وإظهار الحاوية بحركة ناعمة
-                placeholder.classList.add('hidden');
-                subjectsContainer.classList.remove('hidden');
-                
-                // تأخير بسيط لبدء حركة الظهور (Fade in)
-                setTimeout(() => {
-                    subjectsContainer.classList.remove('opacity-0');
-                }, 50);
+  <!-- AD: direct link (labelled) -->
+  <div class="wrap">
+    <a class="sponsor" href="https://www.profitableratecpmnetwork.com/r5y9h522?key=6230f4f5203ac4985413544138d16f70" target="_blank" rel="noopener sponsored nofollow">
+      <b>إعلان</b>
+      <span>رابط برعاية أحد المعلنين</span>
+    </a>
+  </div>
 
-                // بناء كروت المواد ديناميكياً
-                subjectsContainer.innerHTML = subjects.map(sub => `
-                    <label class="relative cursor-pointer group">
-                        <input type="radio" name="optionalSubject" value="${sub.name}" class="peer sr-only radio-card-input" required>
-                        <div class="radio-card-label h-full p-5 rounded-2xl border-2 border-slate-100 bg-white smooth-transition">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="font-bold text-slate-800 text-lg flex items-center gap-2">
-                                    <span class="text-2xl">${sub.icon}</span> ${sub.name}
-                                </span>
-                                <div class="check-circle w-6 h-6 rounded-full border-2 border-slate-300 flex items-center justify-center smooth-transition">
-                                    <svg class="w-4 h-4 text-white opacity-0 transform scale-50 smooth-transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                                </div>
-                            </div>
-                            <p class="text-sm text-slate-500 mt-1">${sub.desc}</p>
-                        </div>
-                    </label>
-                `).join('');
-            });
-        });
+  <!-- HOW -->
+  <section id="how">
+    <div class="wrap">
+      <h2 class="sec">طريقة التحميل</h2>
+      <p class="sub">ثلاث خطوات وتخلص.</p>
+      <div class="steps">
+        <div class="step"><h4>اختار النسخة</h4><p>فاضية للحل، أو محلولة للمراجعة.</p></div>
+        <div class="step"><h4>اضغط تحميل</h4><p>هيفتح Google Drive في صفحة جديدة.</p></div>
+        <div class="step"><h4>احفظ الملف</h4><p>لو ظهرت رسالة تحذير من Drive، اضغط «تنزيل على أي حال».</p></div>
+      </div>
+    </div>
+  </section>
 
-        // --- منطق إظهار/إخفاء قسم "التجهيز الخاص" ---
-        const packageRadios = document.querySelectorAll('input[name="packageType"]');
-        const customSection = document.getElementById('customItemsSection');
-        
-        packageRadios.forEach(radio => {
-            radio.addEventListener('change', (e) => {
-                if (e.target.value === 'custom') {
-                    customSection.classList.remove('hidden');
-                    // تفعيل حركة الظهور
-                    setTimeout(() => {
-                        customSection.classList.remove('opacity-0', '-translate-y-4');
-                    }, 10);
-                } else {
-                    customSection.classList.add('opacity-0', '-translate-y-4');
-                    setTimeout(() => {
-                        customSection.classList.add('hidden');
-                    }, 500); // يتوافق مع مدة الـ transition
-                }
-            });
-        });
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <h2 class="sec">أسئلة شائعة</h2>
+      <p class="sub">&nbsp;</p>
+      <details>
+        <summary>هل الملفات مجانية؟</summary>
+        <p>نعم، التحميل مجاني بالكامل.</p>
+      </details>
+      <details>
+        <summary>الملف مش بيتحمّل، أعمل إيه؟</summary>
+        <p>اضغط «معاينة» وبعدها حمّل الملف من داخل Google Drive، أو جرّب متصفح تاني.</p>
+      </details>
+      <details>
+        <summary>الملف بصيغة إيه؟</summary>
+        <p>PDF، ويفتح على الموبايل والكمبيوتر بأي قارئ PDF.</p>
+      </details>
+    </div>
+  </section>
+</main>
 
-        // --- تفعيل حقول الكمية للعناصر المخصصة ---
-        const customCheckboxes = document.querySelectorAll('.custom-checkbox');
-        customCheckboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', (e) => {
-                const numberInput = e.target.closest('div').querySelector('.item-qty');
-                if (numberInput) {
-                    if (e.target.checked) {
-                        numberInput.disabled = false;
-                        numberInput.classList.remove('opacity-50');
-                        if (!numberInput.value) numberInput.value = 1;
-                        numberInput.focus();
-                    } else {
-                        numberInput.disabled = true;
-                        numberInput.classList.add('opacity-50');
-                        numberInput.value = '';
-                    }
-                }
-            });
-        });
+<footer>
+  <div class="wrap">© <span id="y"></span> منصة التقييمات – جميع الحقوق محفوظة</div>
+</footer>
 
-        // --- معالجة إرسال النموذج ---
-        const form = document.getElementById('orderForm');
-        const submitBtn = document.getElementById('submitBtn');
-        const loadingIcon = document.getElementById('loadingIcon');
-        
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            // التحقق من أن الطالب اختار مادة رابعة
-            const track = document.querySelector('input[name="track"]:checked')?.value;
-            const optionalSubject = document.querySelector('input[name="optionalSubject"]:checked')?.value;
-            
-            if (!optionalSubject) {
-                showError("الرجاء اختيار المادة الرابعة الإختيارية.");
-                return;
-            }
+<script>document.getElementById("y").textContent=new Date().getFullYear();</script>
 
-            const name = document.getElementById('studentName').value.trim();
-            const phone = document.getElementById('studentPhone').value.trim();
-            const packageType = document.querySelector('input[name="packageType"]:checked')?.value;
-            
-            let customItemsDetails = [];
-            if (packageType === 'custom') {
-                const checkedItems = document.querySelectorAll('input[name="customItems"]:checked');
-                checkedItems.forEach(item => {
-                    // البحث عن حقل الكمية المرتبط بالتشيك بوكس إن وجد
-                    const container = item.closest('label').parentElement;
-                    const numberInput = container.querySelector('.item-qty');
-                    let quantity = numberInput ? `(العدد: ${numberInput.value})` : '';
-                    customItemsDetails.push(`${item.value} ${quantity}`.trim());
-                });
-                
-                const extraNotes = document.getElementById('customExtraNotes').value.trim();
-                if (extraNotes) customItemsDetails.push(`إضافات أخرى: ${extraNotes}`);
-            }
+<!-- Ad scripts -->
+<script src="https://pl31766234.profitableratecpmnetwork.com/f1/ca/32/f1ca32a84b4baea243616c871400065d.js"></script>
+<script src="https://pl31766237.profitableratecpmnetwork.com/dd/61/dd/dd61dddfbf84230edb08cde9171b7837.js"></script>
 
-            const orderData = {
-                studentName: name,
-                studentPhone: phone,
-                educationalTrack: track,
-                optionalSubject: optionalSubject,
-                packageType: packageType === 'full' ? 'العرض الكامل' : 'تجهيز خاص',
-                customItemsSelected: customItemsDetails,
-                createdAt: serverTimestamp()
-            };
-
-            submitBtn.disabled = true;
-            submitBtn.classList.add('opacity-90', 'cursor-not-allowed', 'scale-95');
-            loadingIcon.classList.remove('hidden');
-
-            try {
-                await signInAnonymously(auth);
-                const appId = typeof __app_id !== 'undefined' ? __app_id : 'mr-abas';
-                const collectionPath = typeof __app_id !== 'undefined' 
-                    ? `artifacts/${appId}/public/data/box_orders` 
-                    : `box_orders`;
-
-                await addDoc(collection(db, collectionPath), orderData);
-                
-                // إظهار نافذة النجاح
-                document.getElementById('modalName').textContent = name.split(' ')[0]; // الاسم الأول فقط لودية أكثر
-                document.getElementById('modalTrack').textContent = track;
-                
-                const modal = document.getElementById('successModal');
-                const modalContent = document.getElementById('modalContent');
-                
-                modal.classList.remove('hidden');
-                setTimeout(() => {
-                    modal.classList.remove('opacity-0');
-                    modalContent.classList.remove('scale-95');
-                }, 10);
-                
-                // إعادة تعيين النموذج
-                form.reset();
-                subjectsContainer.innerHTML = '';
-                subjectsContainer.classList.add('opacity-0');
-                setTimeout(() => subjectsContainer.classList.add('hidden'), 500);
-                placeholder.classList.remove('hidden');
-                
-                customSection.classList.add('opacity-0', '-translate-y-4');
-                setTimeout(() => customSection.classList.add('hidden'), 500);
-                
-            } catch (error) {
-                console.error("Error saving order: ", error);
-                showError("حدث خطأ أثناء إرسال الطلب. يرجى التأكد من اتصالك بالإنترنت.");
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.classList.remove('opacity-90', 'cursor-not-allowed', 'scale-95');
-                loadingIcon.classList.add('hidden');
-            }
-        });
-
-        // --- دوال مساعدة للواجهة ---
-        window.closeModal = function() {
-            const modal = document.getElementById('successModal');
-            const modalContent = document.getElementById('modalContent');
-            
-            modal.classList.add('opacity-0');
-            modalContent.classList.add('scale-95');
-            
-            setTimeout(() => {
-                modal.classList.add('hidden');
-            }, 300);
-        }
-
-        window.showError = function(msg) {
-            const errorDiv = document.createElement('div');
-            errorDiv.className = 'fixed top-6 left-1/2 transform -translate-x-1/2 bg-red-600 text-white px-6 py-4 rounded-2xl shadow-2xl z-50 transition-all duration-500 font-bold flex items-center gap-3';
-            errorDiv.style.opacity = '0';
-            errorDiv.style.transform = 'translate(-50%, -20px)';
-            errorDiv.innerHTML = `
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                ${msg}
-            `;
-            
-            document.body.appendChild(errorDiv);
-            
-            // حركة الدخول
-            requestAnimationFrame(() => {
-                errorDiv.style.opacity = '1';
-                errorDiv.style.transform = 'translate(-50%, 0)';
-            });
-            
-            // حركة الخروج
-            setTimeout(() => {
-                errorDiv.style.opacity = '0';
-                errorDiv.style.transform = 'translate(-50%, -20px)';
-                setTimeout(() => errorDiv.remove(), 500);
-            }, 4000);
-        }
-    </script>
 </body>
 </html>
